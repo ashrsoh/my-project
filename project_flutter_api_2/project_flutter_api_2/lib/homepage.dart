@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter_api_2/insert_product.dart';
 import 'package:project_flutter_api_2/register_page.dart';
+import 'package:project_flutter_api_2/screen/allprusucts_api.dart';
 import 'package:project_flutter_api_2/screen/user_screen.dart';
 import 'package:project_flutter_api_2/setting_app/setting_app.dart';
 import 'package:project_flutter_api_2/sqlfite/product_screen.dart';
-import 'package:project_flutter_api_2/screen/product_screen.dart';
+import 'package:project_flutter_api_2/sqlfite/search_pruduct.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -107,11 +108,11 @@ class _HomePageState extends State<HomePage> {
 
   final List<Map<String, dynamic>> _menuItems = [
     {'title': 'العملاء', 'imagePath': 'assets/1738180083508.png', 'color': Colors.blueAccent, 'page': UserScreen()},
-    {'title': 'الكميات المستهلكة', 'imagePath': 'assets/1738180083543.jpg', 'color': Colors.greenAccent, 'page': InsertProduct(userId: '123')},
+    {'title': 'الكميات المستهلكة', 'imagePath': 'assets/1738180083543.jpg', 'color': Colors.greenAccent, 'page': ProductListScreen()},
     {'title': 'المخزون', 'imagePath': 'assets/1738180083525.jpg', 'color': Colors.indigoAccent, 'page': ProductScreen()},
     {'title': 'تسجيل الخروج', 'imagePath': 'assets/1738248793050.png', 'color': Colors.redAccent, 'page': RegisterPage()},
     {'title': 'الإعدادات', 'imagePath': 'assets/1738180083517.png', 'color': Colors.deepPurpleAccent, 'page': SettingsPage()},
-    {'title': 'تتبع المستخدمين', 'imagePath': 'assets/1738180083517.png', 'color': Colors.deepPurpleAccent, 'page': AllProductScreen()},
+    {'title': 'استعلام عن منتج ', 'imagePath': 'assets/klipartz.com.png', 'color': Colors.deepPurpleAccent, 'page': SearchProductPage()},
   ];
 
   Widget _buildCard(String title, String imagePath, Color color, BuildContext context, Widget page) {

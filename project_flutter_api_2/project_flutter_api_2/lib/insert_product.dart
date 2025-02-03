@@ -21,6 +21,7 @@ class _InsertProductState extends State<InsertProduct> {
   TextEditingController note1 = TextEditingController();
   TextEditingController note2 = TextEditingController();
   TextEditingController note3 = TextEditingController();
+  
 
   List<Map<String, dynamic>> products = [];
   late String userId;
@@ -206,7 +207,8 @@ void clearFields() {
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: _buildTextField(date, "Date", Icons.date_range),
+                    child: _buildTextField(date, 
+                    "Date", Icons.calendar_today, ),
                   ),
                 ],
               ),

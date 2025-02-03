@@ -117,7 +117,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 onTap: _pickImage,
                 child: Container(
                   padding: EdgeInsets.all(15),
-                  margin: EdgeInsets.symmetric(vertical: 10),
+                  margin: EdgeInsets.symmetric(vertical: 5),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.deepPurple),
                     borderRadius: BorderRadius.circular(12),
@@ -134,7 +134,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   )
                       : Row(
                     children: [
-                      Icon(Icons.image, color: Colors.cyanAccent[700]),
+                      Icon(Icons.image, color: Colors.cyanAccent[400]),
                       SizedBox(width: 10),
                       Expanded(
                         child: Text(

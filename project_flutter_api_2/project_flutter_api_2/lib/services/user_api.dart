@@ -36,14 +36,18 @@ class UserApi {
     return allUsers;
   }
 Future<void> deleteUser(String id) async {
-  final response = await http.delete(
-    Uri.parse('http://192.168.8.41/projectapi_flutter_php/api_php/deletedata.php?id=$id'),
-  );
-
-  if (response.statusCode == 200) {
-    print("User deleted successfully");
-  } else {
-    print("Failed to delete user: ${response.body}");
+  final String url = "http://192.168.8.41/projectapi_flutter_php/api_php"; // Ensure this URL is correct
+  // Ensure this URL is correct
+  try {
+    var response = await http.post(Uri.parse("$url/deletedata.php"), body: {
+      "id": id,
+    });
+    if (response.statusCode != 200) {
+      throw Exception("Failed to delete user: ${response.statusCode}");
+    }
+  } catch (e) {
+    print("Error: $e"); // Debug statement
+    throw Exception("Error: $e");
   }
 }
 
